@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Technical Assignment</h1>
+    <p class="lead" style="margin-top:2em;">In summary, this web application allows you to upload flat files and view the results of the processed files.</p>
+    
+</div>
+
+<div class="col">
+    <div class="col-md-12">
+        <h2>Getting started:</h2>
+        <p>In Web.config > configuration > configSections > connectionStrings you may modify the connection string's parameters to suit those of your environment.</p>
+        <p>You may also change the file paths for Processed and Unprocessed files in Web.config > FileProcessor.Properties.Settings > setting.</p>
+        <p>This application uses the Code First Entity Framework, therefore you need to run the NuGet command "update-database" in the Package Manager Console.</p>
+        <br />
+        <hr />
+    </div>
+    <div class="col-md-12 ro">
+        <h2>Logging in:</h2>
+        <p>
+            Click on the "Log in" link on the top-right of this page to log on.
+            On the same link you will be able to select the Log Off option.
+            <br />
+            There are two seeded accounts with the following login details:
+        </p>
+        <div class="row" style="margin-bottom:4px;">
+            <div class="col-md-4" style="margin-top:4px;">
+                <h3>Admin Account</h3>
+                <p>Email: "noks@test.com"</p>
+                <p style="margin-top:-1px;">Password: "Password@1"</p>
+            </div>
+            <div class="col-md-4" style="margin-top:4px;">
+                <h3>User Account</h3>
+                <p>Email: "noks@t.com"</p>
+                <p style="margin-top:-1px;">Password: "Password@2"</p>
+            </div>
+        </div>
+        <p>
+            Administrators will be able to view everyone's data, while standard users will only be able to only view their processed data.
+        </p>
+        <hr />
+    </div>
+    
+    <div class="col-md-12">
+        <h2>After logging on:</h2>
+        <p>
+            If you have previously imported a file - the previous results should be displayed after logging in, if this does not happen, click on the navigation bar's Processed Data tab.
+        </p>
+        
+        <br />
+        <hr />
+    </div>
+    <div class="col-md-12">
+        <h2>Uploading/Processing Data:</h2>
+        <p>
+            Click on the 'Upload' link on the navigation panel and browse for the file(s) to import, then select the submit button.
+        </p>
+        <br />
+        <p>Note:</p>
+        <p>
+            You may only upload semi-colon separated flat files (i.e., files with file extensions .txt and .csv file extensions).
+            The flat files should have only four fields.
+            The four fields should contain integers only.
+            The first field must be a number from 1 to three.
+        </p>
+        <p>
+            Administrators will be able to view everyone's data, while standard users will only be able to only view their processed data.
+        </p>
+    </div>
+</div>

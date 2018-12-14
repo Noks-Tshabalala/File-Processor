@@ -1,0 +1,85 @@
+﻿@using Microsoft.AspNet.Identity;
+@model IEnumerable<FileProcessor.ViewModels.VMFileDetail>
+@{
+    ViewBag.Title = "Processed Files";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col">
+    <div class="pull-left">
+        <h2>Results</h2>
+        <p style="margin-bottom:2em;">
+            @Html.ActionLink("Upload File(s)", "Upload", "File")
+        </p>
+    </div>
+    <div class="pull-right">
+        @Html.Partial("~/Views/Documents/Processed/_Stats.cshtml")
+    </div>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FileName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateProcessed)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Erred)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Duplicates)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FileName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateProcessed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Erred)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Duplicates)
+        </td>
+        <td>
+            @Html.ActionLink("Results", "Data", new { id = item.Id })  |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+        </td>
+    </tr>
+    }
+
+</table>
+
+@section Scripts{
+    @Scripts.Render("~/Scripts/jquery-3.1.0.min.js")
+    @Scripts.Render("~/Scripts/Custom/Stats.js")
+    <script>
+            var ws = "@VirtualPathUtility.ToAbsolute("~/WebServices/StatsService.asmx")";
+            var uId = "@User.Identity.GetUserId()";
+            $(document).ready(function () {
+                
+                fnGetStats()
+            });
+    </script>
+}

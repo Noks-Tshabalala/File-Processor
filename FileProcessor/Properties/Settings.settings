@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FileProcessor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="UnprocessedFiles" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/App_Data/UnprocessedFiles/</Value>
+    </Setting>
+    <Setting Name="ProcessedFiles" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">~/App_Data/ProcessedFiles/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<FileProcessor.ViewModels.VMCalculationDetail>
+
+@{
+    ViewBag.Title = "Processed Results";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Calculated Results</h3>
+<div class="col" style="margin-top:2em;padding-bottom:3em;">
+    <div class="pull-left">
+        @Html.ActionLink("Back", "Files")
+    </div>
+    <div class="pull-right">
+        @Html.ActionLink("Upload File(s)", "File")
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Formula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormulaDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.A)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.B)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.C)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalculatedResult)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ErrorMessage)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Formula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormulaDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.A)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.B)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.C)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalculatedResult)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ErrorMessage)
+            </td>
+        </tr>
+    }
+
+</table>
